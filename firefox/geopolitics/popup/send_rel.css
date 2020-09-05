@@ -1,0 +1,32 @@
+html, body {
+    width: 300px;
+}
+
+label {
+    font-size: 12px;
+}
+
+#popup-content {
+    padding: 10px;
+}
+
+.log {
+    margin: 5px;
+}
+
+.hidden {
+    display: none;
+}
+
+.status {
+    color: green
+}
+
+.error {
+    color: red
+}
+
+.submit {
+    background-color: black;
+    color: white;
+}

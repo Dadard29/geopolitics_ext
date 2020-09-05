@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="send_rel.css"/>
+</head>
+
+<body>
+<div id="popup-content">
+    <div id="form">
+        <label>
+            From
+            <input id="from" type="text" style="width: 30%">
+        </label>
+        <label>
+            To<input id="to" type="text" style="width: 30%">
+        </label><br>
+
+
+        <label>
+            Subject<br>
+            <input id="subject" type="text" placeholder="The title of the article">
+        </label><br>
+        <label>
+            Brief<br>
+            <textarea id="brief" placeholder="A quick brief"></textarea>
+        </label><br>
+        <label>
+            Article link<br>
+            <input id="article-link" type="text" placeholder="Article link">
+        </label><br>
+        <label>
+            Sector<br>
+            <input id="sector" type="text" placeholder="Activity sector concerned">
+        </label><br>
+        <label>
+            Date<br>
+            <input id="date" type="date">
+        </label><br>
+        <label>
+            Impact<br>
+            <input type="range" id="impact" min="-3" max="3">
+        </label><br>
+        <button id="submit" class="submit" type="submit" >Send</button>
+    </div>
+
+    <div id="error-content" class="hidden error log"></div>
+    <div id="status-content" class="hidden status log"></div>
+</div>
+<script src="send_rel.js"></script>
+</body>
+
+</html>

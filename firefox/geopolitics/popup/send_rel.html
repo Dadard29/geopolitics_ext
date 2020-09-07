@@ -8,41 +8,60 @@
 
 <body>
 <div id="popup-content">
+    <div id="logo">
+        <img id="logo-img" alt="logo.png">
+    </div>
     <div id="form">
-        <label>
-            From
-            <input id="from" type="text" style="width: 30%">
-        </label>
-        <label>
-            To<input id="to" type="text" style="width: 30%">
-        </label><br>
+        <div>
+            <label>
+                From
+                <input id="from" type="text" style="width: 30px">
+            </label>
+            <label>
+                To
+                <input id="to" type="text" style="width: 30px">
+            </label>
+        </div>
 
-
-        <label>
-            Subject<br>
-            <input id="subject" type="text" placeholder="The title of the article">
-        </label><br>
-        <label>
-            Brief<br>
-            <textarea id="brief" placeholder="A quick brief"></textarea>
-        </label><br>
-        <label>
-            Article link<br>
-            <input id="article-link" type="text" placeholder="Article link">
-        </label><br>
-        <label>
-            Sector<br>
-            <input id="sector" type="text" placeholder="Activity sector concerned">
-        </label><br>
-        <label>
-            Date<br>
-            <input id="date" type="date">
-        </label><br>
-        <label>
-            Impact<br>
-            <input type="range" id="impact" min="-3" max="3">
-        </label><br>
-        <button id="submit" class="submit" type="submit" >Send</button>
+        <div>
+            <label>
+                Subject<br>
+                <input id="subject" type="text" placeholder="The title of the article">
+            </label>
+        </div>
+        <div>
+            <label>
+                Brief<br>
+                <textarea id="brief" placeholder="A quick brief" rows="4"></textarea>
+            </label>
+        </div>
+        <div>
+            <label>
+                Article link<br>
+                <input id="article-link" type="text" placeholder="Article link">
+            </label>
+        </div>
+        <div>
+            <label>
+                Sector<br>
+                <input id="sector" type="text" placeholder="Activity sector concerned">
+            </label>
+        </div>
+        <div>
+            <label>
+                Date<br>
+                <input id="date" type="date">
+            </label>
+        </div>
+        <div>
+            <label>
+                Impact<br>
+                <input type="range" id="impact" min="-3" max="3">
+            </label>
+        </div>
+        <div class="submit-form">
+            <button id="submit" class="submit" type="submit" >Send</button>
+        </div>
     </div>
 
     <div id="error-content" class="hidden error log"></div>

@@ -24,10 +24,10 @@
     "webRequestBlocking",
     "https://geop.dadard.fr/*",
     "storage",
-    "activeTab"
+    "tabs"
   ],
 
   "web_accessible_resources": [
-
+    "icons/logo.png"
   ]
 }

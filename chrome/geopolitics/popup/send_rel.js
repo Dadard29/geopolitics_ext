@@ -22,7 +22,7 @@ function log(msg) {
 }
 
 function error(msg) {
-    console.error(msg);
+    console.log(msg);
 
     let s = document.getElementById('error-content');
     if (s.classList.contains('hidden')) {
@@ -38,52 +38,43 @@ function error(msg) {
 }
 
 function setLogo() {
-    document.getElementById('logo-img').src = browser.extension.getURL('icons/logo.png');
+    document.getElementById('logo-img').src = chrome.extension.getURL('icons/logo.png');
 }
 
 function getCurrentTabLink() {
-    browser.tabs.query({currentWindow: true}).then(function(tabs) {
-        for (let t of tabs) {
-            if (t.active) {
-                TAB_LINK = t.url;
+    chrome.tabs.query({active: true, currentWindow: true}, tabs => {
+        let t = tabs[0];
+        TAB_LINK = t.url;
 
-                let url = new URL(TAB_LINK);
-                let found = false;
-                for (let h of whiteList) {
-                    if (url.hostname === h) {
-                        found = true;
-                    }
-                }
-
-                if (!found) {
-                    let f = document.querySelector("#form");
-                    if (!f.classList.contains('hidden')) {
-                        f.classList.add('hidden');
-                        error('this website cannot be used as a reference');
-                    }
-                }
-
-                document.querySelector("#article-link").value = TAB_LINK;
+        let url = new URL(TAB_LINK);
+        let found = false;
+        for (let h of whiteList) {
+            if (url.hostname === h) {
+                found = true;
             }
         }
+
+        if (!found) {
+            let f = document.querySelector("#form");
+            if (!f.classList.contains('hidden')) {
+                f.classList.add('hidden');
+                error('this website cannot be used as a reference');
+            }
+        }
+
+        document.querySelector("#article-link").value = TAB_LINK;
     })
 }
 
 function listenForClicks() {
     document.getElementById('submit').addEventListener("click", (e) => {
 
-        browser.storage.local.get().then(function(s) {
+        chrome.storage.local.get(['token'], function(s) {
 
             let token = s.token;
             if (!token) {
                 error('token not found');
-            }
-
-            return token
-
-        }).then(function(token) {
-
-            if (token) {
+            } else {
 
                 console.log('getting params');
 

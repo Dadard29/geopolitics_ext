@@ -1,0 +1,33 @@
+{
+  "manifest_version": 2,
+  "name": "Geopolitics",
+  "version": "1.0",
+
+  "description": "Feed geopolitics database",
+  "homepage_url": "https://git.dadard.fr/dadard/geopolitics_ext.git",
+  "icons": {
+    "48": "icons/graph-48.png"
+  },
+
+  "options_ui": {
+    "page": "options/options.html"
+  },
+
+  "browser_action": {
+    "default_icon": "icons/graph-48.png",
+    "default_title": "Geopolitics",
+    "default_popup": "popup/send_rel.html"
+  },
+
+  "permissions": [
+    "webRequest",
+    "webRequestBlocking",
+    "https://geop.dadard.fr/*",
+    "storage",
+    "tabs"
+  ],
+
+  "web_accessible_resources": [
+    "icons/logo.png"
+  ]
+}

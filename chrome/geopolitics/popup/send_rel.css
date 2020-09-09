@@ -1,0 +1,45 @@
+html, body {
+    width: 300px;
+    background-color: black;
+    color: white;
+    font-family: "DejaVu Sans Mono", serif;
+}
+
+label {
+    font-size: 12px;
+}
+
+textarea {
+    width: 100%;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+#popup-content {
+    padding: 10px;
+}
+
+.submit-form {
+    display: grid;
+}
+
+.log {
+    margin: 5px;
+}
+
+.hidden {
+    display: none;
+}
+
+.status {
+    color: green
+}
+
+.error {
+    color: red
+}
+
+.submit {
+    background-color: black;
+    color: white;
+}
